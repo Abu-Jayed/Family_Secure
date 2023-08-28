@@ -9,7 +9,6 @@ export default function Home() {
       <Hero></Hero>
       <Stats></Stats>
       <Services></Services>
-      
       <Solutions></Solutions>
     </>
   )
