@@ -212,6 +212,17 @@ const RecentBlog = () => {
                       })
                   }
               </Swiper>
+              <div className="mx-auto flex items-center justify-center ">
+                  <Link href="#_" className="duration-300 transition-all ease-in-out py-3 px-6 flex border rounded-full space-x-3 items-center hover:border-gray-400 " >
+                      To  {" "}
+                      <strong className=" text-primary pl-1 font-semibold " >Click Here</strong>
+                      <span className="text-gray-300" >|</span>
+                      <span className="bg-primary rounded-full w-8 h-8 flex items-center justify-center " >
+                          <BiChevronRight className="w-6 h-6 text-white "></BiChevronRight>
+                      </span>
+
+                  </Link>
+              </div>
       </div>
     </section>
   );
