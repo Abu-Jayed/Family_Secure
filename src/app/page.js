@@ -3,6 +3,7 @@ import Stats from './components/Stats'
 import Services from './components/Services'
 import Solutions from './components/Solutions'
 import Testimonial from './components/Testimonial'
+import RecentBlog from './components/RecentBlog'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services></Services>
       <Solutions></Solutions>
       <Testimonial></Testimonial>
+      <RecentBlog></RecentBlog>
     </>
   )
 }
