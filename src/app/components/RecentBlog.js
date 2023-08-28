@@ -99,8 +99,8 @@ const RecentBlog = () => {
   const sliderRef = useRef(null);
 
   useState(() => {
-    setIsEnd(sliderRef.current.swiper.isEnd);
-    setIsBegining(sliderRef.current.swiper.isBegining);
+    setIsEnd(sliderRef.current?.swiper.isEnd);
+    setIsBegining(sliderRef.current?.swiper.isBegining);
   });
 
   const previousHandler = useCallback(() => {
@@ -186,12 +186,27 @@ const RecentBlog = () => {
                   className=" z-50 py-32 mb-24 relative flex items-stretch !overflow-visible before:content-[''] before:z-50 before:py-32 before:right-full before:w-screen before:absolute before:-top-5 before:-bottom-5 before:bg-light "
               >
                   {
-                      blogContent.recentBlog.map((blog, idx) => {
+                      blogContent.recentBlog.map((blog, i) => {
                           return <SwiperSlide key={i} className=" overflow-visible h-full " >
                               <div className="rounded-lg p-5 bg-white relative mt-10 ">
                                   <Link href={blog.permalink} className="relative -mt-10 inline-block overflow-hidden rounded-lg mb-4" >
-                                      <Image src={blog.featuredId} ></Image>
+                                      <Image src={blog.featuredId} alt="" width={382} height={376} ></Image>
                                   </Link>
+                                  <h2 className=" text-heading text-lg font-bold leading-7 mb-5 ">
+                                      <Link href={blog.permalink} className=" relative text-heading ">
+                                          {blog.title}
+                                      </Link>
+                                  </h2>
+                                  <p className="relative mb-6">{blog.excerpt}</p>
+                                  <div className="flex items-center space-x-4 ">
+                                      <div className=" flex-shrink-0 ">
+                                          <Image src={blog.author.img}alt="" width={50} height={50} className="rounded-full object-cover w-14 h-14 " ></Image>
+                                      </div>
+                                      <div className="leading-5">
+                                          <strong className="text-primary">{blog.author.name}</strong>
+                                          <span className="block text-sm" >{ blog.author.titleRole }</span>
+                                      </div>
+                                  </div>
                               </div>
                           </SwiperSlide>
                       })
