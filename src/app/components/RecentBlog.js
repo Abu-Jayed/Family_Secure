@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const blogContent = {
   heading: {
@@ -33,7 +33,7 @@ const blogContent = {
       title:
         "The Ultimate Guide to Choosing the Right Life Insurance for Your Family",
       excerpt:
-        "Understanding the various types of life insurance policies and finding the perfect coverage to ensure...",
+        "Understanding the various types of life insurance policies and finding the perfect coverage to ensure Your...",
       author: {
         img: "/images/person-2-min.jpg",
         name: "Jane Cooper",
@@ -46,7 +46,7 @@ const blogContent = {
       title:
         "A Comprehensive Guide to Choosing the Right Family Health Insurance Plan",
       excerpt:
-        "This post could cover tips and factors to consider when selecting health insurance for the entire family, including coverage options, deductibles, and copayments.",
+        "This post could cover tips and factors to consider when selecting health insurance for the entire family, including coverage options, deductibles.",
       author: {
         img: "/images/person-3-min.jpg",
         name: "Davon McKenny",
@@ -98,7 +98,7 @@ const RecentBlog = () => {
   const [isBegining, setIsBegining] = useState(null);
   const sliderRef = useRef(null);
 
-  useState(() => {
+  useEffect(() => {
     setIsEnd(sliderRef.current?.swiper.isEnd);
     setIsBegining(sliderRef.current?.swiper.isBegining);
   });
@@ -181,16 +181,17 @@ const RecentBlog = () => {
                       slidesPerView:2
                   },
               }} ref={sliderRef}
-                  speed={700}
+          speed={700}
+          spaceBetween={95}
                   onSlideChange={(swiper) => setSlideIndex(swiper.activeIndex)}
-                  className=" z-50 py-32 mb-24 relative flex items-stretch !overflow-visible before:content-[''] before:z-50 before:py-32 before:right-full before:w-screen before:absolute before:-top-5 before:-bottom-5 before:bg-light "
+                  className=" z-50 py-32 mb-24 relative flex items-stretch !overflow-visible before:content-[''] before:z-50 before:py-32 before:right-full before:w-screen before:absolute before:-top-5 before:-bottom-5 before:bg-light  "
               >
                   {
                       blogContent.recentBlog.map((blog, i) => {
-                          return <SwiperSlide key={i} className=" overflow-visible h-full " >
-                              <div className="rounded-lg p-5 bg-white relative mt-10 ">
-                                  <Link href={blog.permalink} className="relative -mt-10 inline-block overflow-hidden rounded-lg mb-4" >
-                                      <Image src={blog.featuredId} alt="" width={382} height={376} ></Image>
+                          return <SwiperSlide key={i} className=" overflow-visible !mr-[20px] h-full " >
+                              <div className="rounded-lg py-6 px-8  bg-white relative mt-10 ">
+                                  <Link href={blog.permalink} className="relative -mt-10 inline-block overflow-hidden rounded-lg mb-4   " >
+                                      <Image src={blog.featuredId} alt="" width={382} height={486} ></Image>
                                   </Link>
                                   <h2 className=" text-heading text-lg font-bold leading-7 mb-5 ">
                                       <Link href={blog.permalink} className=" relative text-heading ">
