@@ -101,7 +101,7 @@ const RecentBlog = () => {
   useEffect(() => {
     setIsEnd(sliderRef.current?.swiper.isEnd);
     setIsBegining(sliderRef.current?.swiper.isBegining);
-  });
+  },[]);
 
   const previousHandler = useCallback(() => {
     if (!sliderRef.current) return;
