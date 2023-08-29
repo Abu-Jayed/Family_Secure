@@ -54,25 +54,25 @@ const Services = () => {
       <div className="container px-4 mx-auto ">
         <div className="max-w-xl mx-auto text-center mb-20 ">
           {serviceContent.heading.headingSubtitle && (
-            <span className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   ">
+            <span className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10 " data-aos="fade-up" >
               {serviceContent.heading.headingSubtitle}
             </span>
           )}
 
           {serviceContent.heading.headingTitle && (
-            <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5">
+            <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5" data-aos="fade-up">
               {serviceContent.heading.headingTitle}
             </h2>
           )}
 
           {serviceContent.heading.description && (
-            <p className="text-body leading-relaxed">
+            <p className="text-body leading-relaxed" data-aos="fade-up">
               {serviceContent.heading.description}
             </p>
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 " data-aos="fade-up">
           {serviceContent.items.map((item, i) => (
             <div key={i} className=" flex space-x-10 ">
               <div className="w-14 shrink-0 ">

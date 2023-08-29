@@ -60,6 +60,7 @@ const Solutions = () => {
                     height={640}
                     alt=""
                     className="object-cover h-full w-full rounded-lg"
+                    data-aos="fade-up"
                   ></Image>
                 </div>
                 <div className="flex justify-end gap-2">
@@ -75,6 +76,8 @@ const Solutions = () => {
                       width={626}
                       height={640}
                       className="object-cover h-full w-full rounded-lg "
+                      data-aos="fade-up"
+                      data-aos-delay="300"
                     ></Image>
                   </div>
                 </div>
@@ -92,11 +95,13 @@ const Solutions = () => {
                       height={573}
                       className="object-cover h-full w-full rounded-lg shadow-2xl "
                       alt=""
+                      data-aos="fade-in"
+                      data-aos-delay="200"
                     ></Image>
                   </div>
                   {solutionContent.experience.label && (
                     <div>
-                      <div className="p-4 lg:p-10 shadow-2xl rounded-lg bg-white w-full leading-5  ">
+                      <div className="p-4 lg:p-10 shadow-2xl rounded-lg bg-white w-full leading-5  " data-aos="fade-up" data-aos-delay="400" >
                         <strong className="block font-bold text-primary text-xl lg:text-5xl ">
                           {solutionContent.experience.year}
                         </strong>
@@ -109,27 +114,28 @@ const Solutions = () => {
             </div>
           </div>
           <div className=" lg:w-5/12 relative z-10 ">
-            <span className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   ">
+            <span className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   " data-aos="fade-up" data-aos-delay="200">
               {solutionContent.text.headingSubTitle}
             </span>
-            <h2 className="text-2xl lg:text-4xl font-bold mb-5 text-heading">
+            <h2 className="text-2xl lg:text-4xl font-bold mb-5 text-heading" data-aos="fade-up">
               {solutionContent.text.headingTitle}
             </h2>
-            <p className="text-body mb-10 leading-relaxed">
+            <p className="text-body mb-10 leading-relaxed" data-aos="fade-up">
               {solutionContent.text.description}
             </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 w-full gap-4 md:gap-5 mb-10 ">
               {solutionContent.text.features.map((feature, i) => (
-                <li key={i} className="flex flex-grow items-center space-x-5 ">
-                  <span className=" w-7 h-7 rounded-full bg-primary flex items-center justify-center ">
-                    <BiCheck className="text-white text-xl "></BiCheck>
+                <li key={i} className="flex flex-grow items-center space-x-5 "   >
+                  <span data-aos="fade-right" data-aos-delay="100" data-aos-duration="100" className=" w-7 h-7 rounded-full bg-primary flex items-center justify-center ">
+                    <BiCheck className="text-white text-xl " ></BiCheck>
                   </span>
-                  <span>{feature.title}</span>
+                  <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="400">{feature.title}</span>
                 </li>
               ))}
             </ul>
             <div className="flex space-x-3 ">
               <Link
+                data-aos="fade-up"
                 href={solutionContent.text.cta.btn1.href}
                 className="py-4 px-5 bg-primary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#134761] hover:shadow-xl inline-block hover:-top-[4px] relative top-0  "
               >
@@ -137,6 +143,7 @@ const Solutions = () => {
               </Link>
 
               <Link
+                data-aos="fade-up"
                 href={solutionContent.text.cta.btn2.href}
                 className="py-4 px-5 bg-secondary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#179792] hover:shadow-xl inline-block hover:-top-[4px] relative top-0  "
               >

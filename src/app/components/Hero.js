@@ -1,5 +1,9 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
   const heroContent = {
@@ -17,6 +21,15 @@ const Hero = () => {
       img5: "/images/hero-img-5-min.jpg",
     },
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      easing: "slide",
+      once: true,
+    });
+  });
+
   return (
     <>
       <section className="py-20">
@@ -24,30 +37,35 @@ const Hero = () => {
           <div className="lg:flex justify-between items-center">
             <div className="lg:w-5/12 mb-10 lg:mb-0">
               {heroContent.text.subheading && (
-                <span className="inline-block py-0.5 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:z-[-1]  ">
+                <span className="inline-block py-0.5 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:z-[-1]  " data-aos="fade-up">
                   {heroContent.text.subheading}{" "}
                 </span>
               )}
 
               {heroContent.text.heading && (
-                <h1 className="text-4xl lg:text-5xl  font-bold text-heading mb-7">
+                <h1 className="text-4xl lg:text-5xl  font-bold text-heading mb-7" data-aos="fade-up"
+                data-aos-delay="100"> 
                   {heroContent.text.heading}
                 </h1>
               )}
 
-              <p className="leading-relaxed text-body mb-10 ">
+              <p className="leading-relaxed text-body mb-10 " data-aos="fade-up"
+                          data-aos-delay="200" >
                 {heroContent.text.description}
               </p>
 
-              <div className="flex space-x-3 ">
+              <div className="flex space-x-3 " data-aos="fade-up"
+                          data-aos-delay="300">
                 <Link
                   href="/"
                   className="py-4 px-5 bg-primary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#134761] hover:shadow-xl inline-block hover:-top-[2px] relative top-0  "
+                  data-aos="fade-up"
                 >
                   Get Started
                 </Link>
 
                 <Link
+                  data-aos="fade-up"
                   href="/"
                   className="py-4 px-5 bg-secondary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#179792] hover:shadow-xl inline-block hover:-top-[2px] relative top-0  "
                 >
@@ -66,6 +84,7 @@ const Hero = () => {
                       src={heroContent.images.img1}
                       alt="father kissing her son"
                       className="object-cover h-full w-full rounded-2xl "
+                      data-aos="fade-in"
                     ></Image>
                   </div>
                 )}
@@ -80,6 +99,8 @@ const Hero = () => {
                           width={437}
                           height={437}
                           className="object-cover h-full w-full rounded-2xl"
+                          data-aos="fade-in"
+                          data-aos-delay="100"
                         ></Image>
                       </div>
                     )}
@@ -94,6 +115,8 @@ const Hero = () => {
                         width={374}
                         height={392}
                         className="w-full h-full  rounded-2xl "
+                        data-aos="fade-in"
+                          data-aos-delay="200"
                       ></Image>
                     </div>
                   )}
@@ -111,6 +134,8 @@ const Hero = () => {
                           width={394}
                           height={394}
                           className="object-cover h-full w-full rounded-2xl"
+                          data-aos="fade-in"
+                          data-aos-delay="300"
                         ></Image>
                       </div>
                     )}
@@ -125,6 +150,8 @@ const Hero = () => {
                       width={446}
                       height={495}
                       className="object-cover h-full w-full rounded-2xl "
+                      data-aos="fade-in"
+                          data-aos-delay="400"
                     ></Image>
                   )}
                 </div>

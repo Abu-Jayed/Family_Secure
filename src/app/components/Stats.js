@@ -1,6 +1,11 @@
+'use client'
 import { BiChevronRight } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const stateContent = {
   stats: [
@@ -30,6 +35,15 @@ const stateContent = {
 };
 
 const Stats = () => {
+
+  useEffect(() => {
+    AOS.init({
+    duration: 700,
+      easing: "slide",
+      once: true,
+    });
+  });
+
   return (
     <section className="pt-20 pb-10">
       <div className="container px-4 mx-auto">
@@ -37,19 +51,23 @@ const Stats = () => {
           <div className="w-full lg:w-7/12 mb-20 lg:mb-0 ">
             <div className="grid grid-cols-3">
               {
-                stateContent.stats.map((stat, i) => (
-                  <div key={i} className="text-center lg:text-left">
-                    <strong className="text-primary text-4xl xl:text-[52px] font-bold block leading-tight ">
-                      {stat.number}
-                    </strong>
-                    <span>{stat.label}</span>
-                  </div>
-                ))
+                stateContent.stats.map((stat, i) => {
+                  i *= 100
+                  return (
+                    <div key={i} className="text-center lg:text-left" data-aos="fade-up" data-aos-delay={i} >
+                      <strong className="text-primary text-4xl xl:text-[52px] font-bold block leading-tight ">
+                        {stat.number}
+                      </strong>
+                      <span>{stat.label}</span>
+                    </div>
+                  ) 
+                }
+                 )
               }
             </div>
           </div>
           <div className="w-full lg:w-5/12">
-            <div className=" bg-light py-10 lg:px-7 !pr-28 md:pr-32 lg:pr-40 rounded-lg relative ">
+            <div className=" bg-light py-10 lg:px-7 !pr-28 md:pr-32 lg:pr-40 rounded-lg relative " data-aos="fade-in" >
               {stateContent.getStarted.img && (
                 <Image src={stateContent.getStarted.img} alt="" width={96} height={288.84} className="absolute right-0 lg:right-6 -top-14 w-24 " />
               )}
