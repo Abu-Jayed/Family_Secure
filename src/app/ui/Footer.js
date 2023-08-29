@@ -146,6 +146,13 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
+            <div className="text-center pt-10 border-t pb-10 border-gray-200 ">
+                <p>
+                    {footerContent.copyright.label1}{" "}
+                    <HiMiniHeart className="text-red-600 inline-block "></HiMiniHeart>
+                    {footerContent.copyright.label2}
+                </p>
+            </div>
       </div>
   </footer>
 };
