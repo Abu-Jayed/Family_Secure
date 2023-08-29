@@ -118,13 +118,13 @@ const RecentBlog = () => {
       <div className="container px-4 mx-auto">
         <div className="lg:flex justify-between items-center mb-10 ">
           <div className="lg:w-5/12 mb:10 lg:mb-0 ">
-            <span className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   ">
+            <span data-aos="fade-up" data-aos-delay="400" className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   ">
               {blogContent.heading.headingSubTitle}
             </span>
-            <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5 ">
+            <h2 data-aos="fade-up" className="text-heading text-2xl lg:text-4xl font-bold mb-5 ">
               {blogContent.heading.headingTitle}
             </h2>
-            <p className=" text-body leading-relaxed ">
+            <p data-aos="fade-up" data-aos-delay="100" className=" text-body leading-relaxed ">
               {blogContent.heading.description}
             </p>
           </div>
@@ -213,9 +213,9 @@ const RecentBlog = () => {
                       })
                   }
               </Swiper>
-              <div className="mx-auto flex items-center justify-center ">
+              <div data-aos="fade-right" data-aos-duration="1000" className="mx-auto flex items-center justify-center ">
                   <Link href="#_" className="duration-300 transition-all ease-in-out py-3 px-6 flex border rounded-full space-x-3 items-center hover:border-gray-400 " >
-                      To  {" "}
+                      To view all post {" "}
                       <strong className=" text-primary pl-1 font-semibold " >Click Here</strong>
                       <span className="text-gray-300" >|</span>
                       <span className="bg-primary rounded-full w-8 h-8 flex items-center justify-center " >

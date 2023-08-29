@@ -84,7 +84,7 @@ const Hero = () => {
                       src={heroContent.images.img1}
                       alt="father kissing her son"
                       className="object-cover h-full w-full rounded-2xl "
-                      data-aos="fade-in"
+                      data-aos="fade-right"
                     ></Image>
                   </div>
                 )}
@@ -99,13 +99,13 @@ const Hero = () => {
                           width={437}
                           height={437}
                           className="object-cover h-full w-full rounded-2xl"
-                          data-aos="fade-in"
+                          data-aos="fade-down"
                           data-aos-delay="100"
                         ></Image>
                       </div>
                     )}
 
-                    <div className="bg-yellowLight rounded-2xl rounded-tr-[200px]  "></div>
+                    <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" className="bg-yellowLight rounded-2xl rounded-tr-[200px]  "></div>
                   </div>
                   {heroContent.images.img3 && (
                     <div>
@@ -115,7 +115,7 @@ const Hero = () => {
                         width={374}
                         height={392}
                         className="w-full h-full  rounded-2xl "
-                        data-aos="fade-in"
+                        data-aos="fade-left"
                           data-aos-delay="200"
                       ></Image>
                     </div>
@@ -125,7 +125,7 @@ const Hero = () => {
               <div className="flex space-x-2">
                 <div className="w-4/12">
                   <div className="grid gap-2 grid-cols-2">
-                    <div className="bg-greenLight rounded-2xl rounded-bl-[200px]"></div>
+                    <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="1000" className="bg-greenLight rounded-2xl rounded-bl-[200px]"></div>
                     {heroContent.images.img4 && (
                       <div>
                         <Image
@@ -134,7 +134,7 @@ const Hero = () => {
                           width={394}
                           height={394}
                           className="object-cover h-full w-full rounded-2xl"
-                          data-aos="fade-in"
+                          data-aos="fade-up"
                           data-aos-delay="300"
                         ></Image>
                       </div>
@@ -150,7 +150,7 @@ const Hero = () => {
                       width={446}
                       height={495}
                       className="object-cover h-full w-full rounded-2xl "
-                      data-aos="fade-in"
+                      data-aos="fade-up"
                           data-aos-delay="400"
                     ></Image>
                   )}

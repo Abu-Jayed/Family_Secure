@@ -72,26 +72,30 @@ const Services = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 " data-aos="fade-up">
-          {serviceContent.items.map((item, i) => (
-            <div key={i} className=" flex space-x-10 ">
-              <div className="w-14 shrink-0 ">
-                <span className="inline-flex items-center justify-center p-2 w-[70px] h-[70px] rounded-lg bg-white shadow-2xl ">
-                  <Image src={item.icon} width={62} height={62} alt="" ></Image>
-                </span>
-              </div>
-              <div>
-                {item.title && (
-                  <h3 className="text-heading font-bold text-md mb-3 ">{ item.title}</h3>
-                )}
-
-                {item.description && (
-                  <p className="leading-relaxed"> { item.description}</p>
-                )}
-                
-              </div>
-              </div>
-            ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+          {serviceContent.items.map((item, i) => {
+            i *= 100
+            return (
+              <div data-aos="fade-up" data-aos-delay={i} key={item.title} className=" flex space-x-10 ">
+                <div className="w-14 shrink-0 ">
+                  <span className="inline-flex items-center justify-center p-2 w-[70px] h-[70px] rounded-lg bg-white shadow-2xl ">
+                    <Image src={item.icon} width={62} height={62} alt="" ></Image>
+                  </span>
+                </div>
+                <div>
+                  {item.title && (
+                    <h3 className="text-heading font-bold text-md mb-3 ">{ item.title}</h3>
+                  )}
+  
+                  {item.description && (
+                    <p className="leading-relaxed"> { item.description}</p>
+                  )}
+                  
+                </div>
+                </div>
+              )
+          } 
+          )}
         </div>
 
       </div>

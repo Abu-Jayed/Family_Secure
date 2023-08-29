@@ -43,19 +43,19 @@ const Testimonial = () => {
       <div className="container px-4 mx-auto ">
         <div className="lg:flex justify-between items-center ">
           <div className=" lg:w-4/12 lg:pr-24 mb-10 lg:mb-0 ">
-            <span className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   ">
+            <span data-aos="fade-up" data-aos-delay="400" className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0 before:top-0 before:bottom-0 before:-z-10   ">
               {testimonialContent.heading.headingSubTitle}
             </span>
 
-            <h2 className=" text-heading text-2xl lg:text-4xl font-bold mb-5 ">
+            <h2 data-aos="fade-up" className=" text-heading text-2xl lg:text-4xl font-bold mb-5 ">
               {testimonialContent.heading.headingTitle}
             </h2>
 
-            <p className="text-body leading-relaxed mb-10 ">
+            <p className="text-body leading-relaxed mb-10 " data-aos="fade-up" data-aos-delay="100" >
               {testimonialContent.heading.description}
             </p>
 
-            <p>
+            <p data-aos="fade-up">
               <Link
                 href={testimonialContent.heading.cta.cta_href}
                 className="py-4 px-5 bg-primary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#134761] hover:shadow-xl inline-block hover:-top-[4px] relative top-0  "
@@ -73,6 +73,7 @@ const Testimonial = () => {
                   }
                   return (
                     <div
+                    data-aos="fade-up"
                       key={i}
                       className={` bg-white p-7 rounded-lg w-full ${
                         i == 1 ? "" : "mb-6"
@@ -114,8 +115,8 @@ const Testimonial = () => {
               </div>
               <div className="md:w-6/12">
                 <div>
-                  <div className="w-16 h-16 hidden md:block bg-greenLight rounded-full mb-6  "></div>
-                  <div className=" bg-white p-7 rounded-lg mb-6 w-full ">
+                  <div data-aos="fade-in" data-aos-delay="400" className="w-16 h-16 hidden md:block bg-greenLight rounded-full mb-6  "></div>
+                  <div data-aos="fade-up"  data-aos-delay="300" className=" bg-white p-7 rounded-lg mb-6 w-full ">
                     <div className="flex space-x-4 items-center mb-4 ">
                       <div className="relative">
                         <Image
@@ -149,7 +150,7 @@ const Testimonial = () => {
                       </blockquote>
                     </div>
                   </div>
-                  <div className=" bg-[#F27763] md:inline-block w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px] "></div>
+                  <div data-aos="fade-out" data-aos-delay="400" className=" bg-[#F27763] md:inline-block w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px] "></div>
                 </div>
               </div>
             </div>

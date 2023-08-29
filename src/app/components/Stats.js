@@ -67,18 +67,18 @@ const Stats = () => {
             </div>
           </div>
           <div className="w-full lg:w-5/12">
-            <div className=" bg-light py-10 lg:px-7 !pr-28 md:pr-32 lg:pr-40 rounded-lg relative " data-aos="fade-in" >
+            <div className=" bg-light py-10 lg:px-7 !pr-28 md:pr-32 lg:pr-40 rounded-lg relative "  >
               {stateContent.getStarted.img && (
-                <Image src={stateContent.getStarted.img} alt="" width={96} height={288.84} className="absolute right-0 lg:right-6 -top-14 w-24 " />
+                <Image data-aos="fade-in" data-aos-delay="400" data-aos-duration="1200" src={stateContent.getStarted.img} alt="business women not found" width={96} height={288.84} className="absolute right-0 lg:right-6 -top-14 w-24 " />
               )}
               {stateContent.getStarted.heading && ( 
-                <h3 className="text-heading font-bold text-xl mb-3 ">
+                <h3 data-aos="fade-left" className="text-heading font-bold text-xl mb-3 ">
                   {stateContent.getStarted.heading}
                 </h3>
               )}
 
               {stateContent.getStarted.description && ( 
-                <p className="text-md mb-5 ">
+                <p data-aos="fade-left" data-aos-delay="400" className="text-md mb-5 ">
                   {stateContent.getStarted.description}
                 </p>
               )}

@@ -124,14 +124,18 @@ const Solutions = () => {
               {solutionContent.text.description}
             </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 w-full gap-4 md:gap-5 mb-10 ">
-              {solutionContent.text.features.map((feature, i) => (
-                <li key={i} className="flex flex-grow items-center space-x-5 "   >
-                  <span data-aos="fade-right" data-aos-delay="100" data-aos-duration="100" className=" w-7 h-7 rounded-full bg-primary flex items-center justify-center ">
-                    <BiCheck className="text-white text-xl " ></BiCheck>
-                  </span>
-                  <span data-aos="fade-right" data-aos-delay="400" data-aos-duration="400">{feature.title}</span>
-                </li>
-              ))}
+              {solutionContent.text.features.map((feature, i) => {
+                i *= 100
+                return (
+                  <li key={i} className="flex flex-grow items-center space-x-5 "   >
+                    <span data-aos="fade-right" data-aos-delay="100" data-aos-duration="100" className=" w-7 h-7 rounded-full bg-primary flex items-center justify-center ">
+                      <BiCheck className="text-white text-xl " ></BiCheck>
+                    </span>
+                    <span data-aos="fade-right" data-aos-delay={i} data-aos-duration="400">{feature.title}</span>
+                  </li>
+                )
+              } 
+              )}
             </ul>
             <div className="flex space-x-3 ">
               <Link
