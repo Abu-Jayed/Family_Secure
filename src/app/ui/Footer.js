@@ -83,7 +83,71 @@ const footerContent = {
 }
 
 const Footer = () => {
-  return <div></div>;
+    return <footer className="mt-8 pt-8 ">
+        <div className="container px-4 mx-auto  ">
+            <div className="block lg:flex gap-20 mb-10 pb-10">
+                <div className="w-full lg:w-4/12 mb-10 lg:mb-0">
+                    <Link href="/" className="mb-4 inline-block " >
+                        <Image src={footerContent.about.logo} alt="" width={157} height={30} ></Image>
+                    </Link>
+                    <p className="leading-relaxed mb-7 ">
+                        {footerContent.about.description}
+                    </p>
+                    <p>
+                        <Link className="flex space-x-2 outline-none items-center font-semibold text-primary group " href={footerContent.about.cta.herf}>
+                            <span>{footerContent.about.cta.label}</span>
+                            <span className="w-6 h-6 rounded-full bg-primary text-white inline-flex items-center justify-center duration-300 transition-all ease-in-out group-hover:bg-secondary ">
+                                <BiChevronRight className="text-lg"></BiChevronRight>
+                            </span>
+                        </Link>
+                    </p>
+                </div>
+                <div className="w-full lg:w-4/12 mb-10 lg:mb-0 ">
+                    <div className="grid grid-cols-2 gap-10 ">
+                        {footerContent.footerLink.map((footerLink, i) => (
+                            <div key={i}>
+                                <h3 className="font-semibold text-heading mb-5 ">{footerLink.heading}</h3>
+                                <ul className="p-0 m-0">
+                                    {footerLink.links.map((link, i) => (
+                                        <li key={i}>
+                                            <Link className="group flex items-center duration-300 transition-all ease-in-out hover:text-primary " href={link.herf}>
+                                                <span>{link.label}</span>
+                                                <span className=" left-2 relative duration-300 transition-all ease-in-out opacity-0 group-hover:opacity-100 group-hover:left-3 ">
+                                                    <BiChevronRight className="text-xl"></BiChevronRight>
+                                                </span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="lg:w-4/12 w-full">
+                    <h3 className=" font-semibold text-heading mb-5 " >
+                        {footerContent.contact.heading}
+                    </h3>
+                    <p className="leading-relaxed mb-7 ">
+                        {footerContent.contact.description}
+                    </p>
+                    <ul>
+                        <li className=" flex items-start space-x-3 mb-5 ">
+                            <HiLocationMarker className="text-xl text-primary"></HiLocationMarker>
+                            <span>{ footerContent.contact.address.street}</span>
+                        </li>
+                        <li className=" flex items-start space-x-3 mb-5 ">
+                            <HiPhone className="text-xl text-primary"></HiPhone>
+                            <span>{ footerContent.contact.address.phone}</span>
+                        </li>
+                        <li className=" flex items-start space-x-3 mb-5 ">
+                            <HiMiniGlobeAmericas className="text-xl text-primary"></HiMiniGlobeAmericas>
+                            <span>{ footerContent.contact.address.website}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+      </div>
+  </footer>
 };
 
 export default Footer;
