@@ -33,27 +33,31 @@ const Navigation = () => {
 
   const [navOpen, setNavOpen] = useState(false);
 
-  const [dimentions, setDimentions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
+  const [dimensions, setDimensions] = useState({
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
   });
 
   useEffect(() => {
     function handleResize() {
-      setDimentions({
+      setDimensions({
         height: window.innerHeight,
         width: window.innerWidth,
       });
-      // when window resize we will set the nav open false
-      if (dimentions.width > 768 && navOpen) {
+
+      if (dimensions.width > 768 && navOpen) {
         setNavOpen(false);
       }
     }
-    window.addEventListener("resize", handleResize);
-    return (_) => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, [navOpen, dimensions.width]);
 
   const mobileMenuHandler = () => {
     setNavOpen(!navOpen);
