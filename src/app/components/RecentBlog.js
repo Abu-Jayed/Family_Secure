@@ -106,12 +106,12 @@ const RecentBlog = () => {
   const previousHandler = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slidePrev();
-  });
+  },[]);
 
   const nextHandler = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
-  });
+  },[]);
 
   return (
     <section className="py-20 bg-light overflow-x-hidden ">
