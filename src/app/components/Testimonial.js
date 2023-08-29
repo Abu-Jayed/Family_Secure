@@ -107,7 +107,7 @@ const Testimonial = () => {
                         </div>
                       </div>
                       <div>
-                        <blockquote>"{testimonial.testimony}"</blockquote>
+                        <blockquote>&quot; {testimonial.testimony}&quot;</blockquote>
                       </div>
                     </div>
                   );
@@ -146,7 +146,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                       <blockquote>
-                        "{testimonialContent.testimonials[2].testimony}"
+                      &quot;{testimonialContent.testimonials[2].testimony}&quot;
                       </blockquote>
                     </div>
                   </div>
